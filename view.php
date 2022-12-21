@@ -13,7 +13,7 @@
         
     } else{
         $id = $_GET['id'];
-        $result = $crud->getAttendeeDetails($id);
+        $result = $crud->getSubscribersDetails($id);
     
     
 ?>

@@ -12,7 +12,7 @@
         public function insertSubscribers($fname, $lname, $dob, $email,$contact,$genre,$gender,$address,$avatar_path){
             try {
                 // define sql statement to be executed
-                $sql = "INSERT INTO subscribers (firstname,lastname,dateofbirth,emailaddress,contactnumber,genre_id,gender_id,avatar_path,) VALUES (:fname,:lname,:dob,:email,:contact,:genre,:genders,:avatar_path)";
+                $sql = "INSERT INTO subscribers (firstname,lastname,dateofbirth,emailaddress,contactnumber,genre_id,gender_id,address,avatar_path,) VALUES (:fname,:lname,:dob,:email,:contact,:genre,:genders,:address,:avatar_path)";
                 //prepare the sql statement for execution
                 $stmt = $this->db->prepare($sql);
                 // bind all placeholders to the actual values
@@ -23,6 +23,8 @@
                 $stmt->bindparam(':contact',$contact);
                 $stmt->bindparam(':genre',$genre);
                 $stmt->bindparam(':genders',$gender);
+                $stmt->bindparam(':address',$address);
+
 
                 $stmt->bindparam(':avatar_path',$avatar_path);
            
@@ -37,9 +39,9 @@
             }
         }
 
-        public function editSubcribers($id,$fname, $lname, $dob, $email,$contact,$genre,){
+        public function editSubcribers($id,$fname, $lname, $dob, $email,$contact,$genre,$gender,$address){
            try{ 
-                $sql = "UPDATE `subscribers` SET `firstname`=:fname,`lastname`=:lname,`dateofbirth`=:dob,`emailaddress`=:email,`contactnumber`=:contact,`genre_id`=:genre
+                $sql = "UPDATE `subscribers` SET `firstname`=:fname,`lastname`=:lname,`dateofbirth`=:dob,`emailaddress`=:email,`contactnumber`=:contact,`genre_id`=:genre,`genders`=:gender,`address`=:address
                  WHERE subscriber_id = :id ";
                  
                 $stmt = $this->db->prepare($sql);
@@ -51,6 +53,7 @@
                 $stmt->bindparam(':email',$email);
                 $stmt->bindparam(':contact',$contact);
                 $stmt->bindparam(':genre',$genre);
+                $stmt->bindparam(':genders',$gender);
 
                 // execute statement
                 $stmt->execute();

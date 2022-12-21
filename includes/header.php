@@ -30,7 +30,7 @@ include_once 'includes/session.php'?>
           <a class="nav-item nav-link active" href="contactus.php">Contact Us <span class="sr-only">(current)</span></a>
 
         
-          <a class="nav-item nav-link" href="viewrecords.php">View Attendees</a>
+          <a class="nav-item nav-link" href="viewrecords.php">View Subscribers</a>
         </div>
         <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
