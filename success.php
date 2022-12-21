@@ -10,7 +10,7 @@
         $fname = $_POST['firstname'];
         $lname = $_POST['lastname'];
         $dob = $_POST['dob'];
-        $specialty = $_POST['specialty'];
+        $genre = $_POST['genre'];
         $email = $_POST['email'];
         $contact = $_POST['phone'];
         
@@ -24,8 +24,8 @@
        
 
         //Call function to insert and track if success or not
-        $isSuccess = $crud->insertAttendees($fname, $lname, $dob, $email,$contact,$specialty,$destination);
-        $specialtyName = $crud->getSpecialtyById($specialty);
+        $isSuccess = $crud->insertSubscribers($fname, $lname, $dob, $email,$contact,$genre,$destination);
+        $genreName = $crud->getGenreById($genre);
         
         if($isSuccess){
           SendEmail::SendMail($email, "welcome to Anime Central Subscription List ", "You have successfully subscribed to our mailing list.");
@@ -48,7 +48,7 @@
                 <?php echo $_POST['firstname'] . ' ' . $_POST['lastname'];  ?>
             </h5>
             <h6 class="card-subtitle mb-2 text-muted">
-              <?php echo $specialtyName['name'];  ?>    
+              <?php echo $genreName['name'];  ?>    
             </h6>
             <p class="card-text">
                 Date Of Birth: <?php echo $_POST['dob'];  ?>

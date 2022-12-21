@@ -9,10 +9,10 @@
         $dob = $_POST['dob'];
         $email = $_POST['email'];
         $contact = $_POST['phone'];
-        $specialty = $_POST['specialty'];
+        $genre = $_POST['genre'];
 
         //Call Crud function
-        $result = $crud->editAttendee($id,$fname, $lname, $dob, $email,$contact,$specialty);
+        $result = $crud->editSubscribers($id,$fname, $lname, $dob, $email,$contact,$genre);
         // Redirect to index.php
         if($result){
             header("Location: viewrecords.php");

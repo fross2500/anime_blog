@@ -29,10 +29,22 @@
             <input type="text" class="form-control" id="dob" name="dob">
         </div>
         <div class="form-group">
-            <label for="specialty">Favourite Anime Genre</label>
-            <select class="form-control" id="specialty" name="specialty">
+            <label for="gender">Gender</label>
+            <select class="form-control" id="gender" name="gender">
                 <?php while($r = $results->fetch(PDO::FETCH_ASSOC)) {?>
-                   <option value="<?php echo $r['specialty_id'] ?>"><?php echo $r['name']; ?></option>
+                   <option value="<?php echo $r['gender_id'] ?>"><?php echo $r['name']; ?></option>
+                <?php }?> 
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input required type="text" class="form-control" id="address" name="address">
+        </div>
+        <div class="form-group">
+            <label for="genre">Favourite Anime Genre</label>
+            <select class="form-control" id="genre" name="genre">
+                <?php while($r = $results->fetch(PDO::FETCH_ASSOC)) {?>
+                   <option value="<?php echo $r['genre_id'] ?>"><?php echo $r['anime']; ?></option>
                 <?php }?> 
             </select>
         </div>
