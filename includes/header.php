@@ -17,7 +17,7 @@ include_once 'includes/session.php'?>
     <title>Anime Central - <?php echo $title ?></title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="index.php">Anime Central</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -29,8 +29,13 @@ include_once 'includes/session.php'?>
           <a class="nav-item nav-link active" href="subscribe.php">Subscribe <span class="sr-only">(current)</span></a>
           <a class="nav-item nav-link active" href="contactus.php">Contact Us <span class="sr-only">(current)</span></a>
 
+        
           <a class="nav-item nav-link" href="viewrecords.php">View Attendees</a>
         </div>
+        <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-dark" type="submit">Search</button>
+      </form>
 
         <div class="navbar-nav ml-auto">
 
