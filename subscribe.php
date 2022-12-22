@@ -67,7 +67,7 @@
             <small id="avatar" class="form-text text-danger">File Upload Is Optional</small>
         </div>
         <br/>
-        
+
         <br>
        
         <button type="submit" name="submit" class="btn btn-dark text-white btn-block" style="width: 56rem;">Submit</button>

@@ -10,8 +10,8 @@
         $fname = $_POST['firstname'];
         $lname = $_POST['lastname'];
         $dob = $_POST['dob'];
-        $current_address = $_POST['current_address']
-        $genders = $_POST['genders']
+        $current_address = $_POST['current_address'];
+        $genders = $_POST['genders'];
         $genre = $_POST['genre'];
         $email = $_POST['email'];
         $contact = $_POST['phone'];
@@ -26,7 +26,7 @@
        
 
         //Call function to insert and track if success or not
-        $isSuccess = $crud->insertSubscribers($fname, $lname, $dob,$current_address,$genre,$genders, $email,$contact,$destination);
+        $isSuccess = $crud->insertSubscribers($fname, $lname, $dob,$current_address,$genre,$genders,$email,$contact,$destination);
         $genreName = $crud->getGenreById($genre);
         
         if($isSuccess){
@@ -61,7 +61,8 @@
             <p class="card-text">
                 Contact Number: <?php echo $_POST['phone'];  ?>
             </p>
-    
+           
+              
         </div>
     </div>
     

@@ -8,11 +8,11 @@
             $this->db = $conn;
         }
         
-        // function to insert a new record into the subscriber database
-        public function insertSubscribers($fname, $lname, $dob, $email,$contact,$genre,$genders,$current_address,$avatar_path){
+        // function to insert a new record into the subscribers database
+        public function insertSubscribers($fname, $lname, $dob, $current_address, $genre, $genders, $email, $contact,  $avatar_path){
             try {
                 // define sql statement to be executed
-                $sql = "INSERT INTO subscribers (firstname,lastname,dateofbirth,current_address,genre_id,gender_id,emailaddress,contactnumber,avatar_path,) VALUES (:fname,:lname,:dob,:current_address,:genre,:genders,:email,:contact,:avatar_path)";
+                $sql = "INSERT INTO subscribers (firstname,lastname,dateofbirth,current_address,genre_id,gender_id,emailaddress,contactnumber,avatar_path) VALUES (:fname,:lname,:dob,:current_address,:genre,:genders,:email,:contact,:avatar_path)";
                 //prepare the sql statement for execution
                 $stmt = $this->db->prepare($sql);
                 // bind all placeholders to the actual values
@@ -37,9 +37,9 @@
             }
         }
 
-        public function editSubcribers($id,$fname, $lname, $dob, $email,$contact,$genre,$genders,$current_address){
+        public function editSubcribers($id,$fname, $lname, $dob, $current_address, $genre,$genders,$email,$contact){
            try{ 
-                $sql = "UPDATE `subscribers` SET `firstname`=:fname,`lastname`=:lname,`dateofbirth`=:dob,`emailaddress`=:email,`contactnumber`=:contact,`genre_id`=:genre,`gender_id`=:genders,`current_address`=:current_address
+                $sql = "UPDATE `subscribers` SET `firstname`=:fname,`lastname`=:lname,`dateofbirth`=:dob,`current_address`=:current_address`,`genre_id`=:genre,`gender_id`=:genders,`emailaddress`=:email,`contactnumber`=:contact
                  WHERE subscriber_id = :id ";
                  
                 $stmt = $this->db->prepare($sql);
