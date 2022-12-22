@@ -9,23 +9,21 @@
         }
         
         // function to insert a new record into the subscriber database
-        public function insertSubscribers($fname, $lname, $dob, $email,$contact,$genre,$gender,$address,$avatar_path){
+        public function insertSubscribers($fname, $lname, $dob, $email,$contact,$genre,$genders,$current_address,$avatar_path){
             try {
                 // define sql statement to be executed
-                $sql = "INSERT INTO subscribers (firstname,lastname,dateofbirth,emailaddress,contactnumber,genre_id,gender_id,address,avatar_path,) VALUES (:fname,:lname,:dob,:email,:contact,:genre,:genders,:address,:avatar_path)";
+                $sql = "INSERT INTO subscribers (firstname,lastname,dateofbirth,current_address,genre_id,gender_id,emailaddress,contactnumber,avatar_path,) VALUES (:fname,:lname,:dob,:current_address,:genre,:genders,:email,:contact,:avatar_path)";
                 //prepare the sql statement for execution
                 $stmt = $this->db->prepare($sql);
                 // bind all placeholders to the actual values
                 $stmt->bindparam(':fname',$fname);
                 $stmt->bindparam(':lname',$lname);
                 $stmt->bindparam(':dob',$dob);
+                $stmt->bindparam(':current_address',$current_address);
+                $stmt->bindparam(':genre',$genre);
+                $stmt->bindparam(':genders',$genders);
                 $stmt->bindparam(':email',$email);
                 $stmt->bindparam(':contact',$contact);
-                $stmt->bindparam(':genre',$genre);
-                $stmt->bindparam(':genders',$gender);
-                $stmt->bindparam(':address',$address);
-
-
                 $stmt->bindparam(':avatar_path',$avatar_path);
            
 
@@ -39,9 +37,9 @@
             }
         }
 
-        public function editSubcribers($id,$fname, $lname, $dob, $email,$contact,$genre,$gender,$address){
+        public function editSubcribers($id,$fname, $lname, $dob, $email,$contact,$genre,$genders,$current_address){
            try{ 
-                $sql = "UPDATE `subscribers` SET `firstname`=:fname,`lastname`=:lname,`dateofbirth`=:dob,`emailaddress`=:email,`contactnumber`=:contact,`genre_id`=:genre,`genders`=:gender,`address`=:address
+                $sql = "UPDATE `subscribers` SET `firstname`=:fname,`lastname`=:lname,`dateofbirth`=:dob,`emailaddress`=:email,`contactnumber`=:contact,`genre_id`=:genre,`gender_id`=:genders,`current_address`=:current_address
                  WHERE subscriber_id = :id ";
                  
                 $stmt = $this->db->prepare($sql);
@@ -50,10 +48,14 @@
                 $stmt->bindparam(':fname',$fname);
                 $stmt->bindparam(':lname',$lname);
                 $stmt->bindparam(':dob',$dob);
+                $stmt->bindparam(':current_address',$current_address);
+                $stmt->bindparam(':genre',$genre);
+                $stmt->bindparam(':genders',$genders);
                 $stmt->bindparam(':email',$email);
                 $stmt->bindparam(':contact',$contact);
-                $stmt->bindparam(':genre',$genre);
-                $stmt->bindparam(':genders',$gender);
+                
+                
+                
 
                 // execute statement
                 $stmt->execute();

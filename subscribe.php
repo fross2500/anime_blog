@@ -1,5 +1,5 @@
 <?php
-    $title = 'Index'; 
+    $title = 'Subscribe'; 
 
     require_once 'includes/header.php'; 
    require_once 'db/conn.php'; 
@@ -29,15 +29,7 @@
             <input type="text" class="form-control" id="dob" name="dob">
         </div>
         <div class="form-group">
-            <label for="gender">Gender</label>
-            <select class="form-control" id="gender" name="gender">
-                <?php while($r = $results->fetch(PDO::FETCH_ASSOC)) {?>
-                   <option value="<?php echo $r['gender_id'] ?>"><?php echo $r['name']; ?></option>
-                <?php }?> 
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="address">Address</label>
+            <label for="address">Current Address</label>
             <input required type="text" class="form-control" id="address" name="address">
         </div>
         <div class="form-group">
@@ -48,6 +40,15 @@
                 <?php }?> 
             </select>
         </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select class="form-control" id="gender" name="gender">
+                <?php while($r = $results->fetch(PDO::FETCH_ASSOC)) {?>
+                   <option value="<?php echo $r['gender_id'] ?>"><?php echo $r['name']; ?></option>
+                <?php }?> 
+            </select>
+        </div>
+        
         <div class="form-group">
             <label for="email">Email address</label>
             <input required type="email" class="form-control" id="email"  name="email" aria-describedby="emailHelp" >
@@ -66,8 +67,10 @@
             <small id="avatar" class="form-text text-danger">File Upload Is Optional</small>
         </div>
         <br/>
+        
+        <br>
        
-        <button type="submit" name="submit" class="btn btn-primary text-white btn-block" style="width: 67rem;">Submit</button>
+        <button type="submit" name="submit" class="btn btn-dark text-white btn-block" style="width: 56rem;">Submit</button>
     </div>
 
  </form>

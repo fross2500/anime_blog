@@ -44,7 +44,7 @@
             
         </tr>
     </table><br/><br/>
-    <input type="submit" value="Login" class="btn btn-primary btn-block"><br/>
+    <input type="submit" value="Login" class="btn btn-dark btn-block"><br/>
     <a href="#"> Forgot Password </a>
 
 </form><br/><br/><br/><br/>
