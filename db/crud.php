@@ -9,7 +9,7 @@
         }
         
         // function to insert a new record into the subscribers database
-        public function insertSubscribers($fname, $lname, $dob, $current_address, $genre, $genders, $email, $contact,  $avatar_path){
+        public function insertSubscribers($fname, $lname, $dob, $genre, $email, $contact,  $avatar_path){
             try {
                 // define sql statement to be executed
                 $sql = "INSERT INTO subscribers (firstname,lastname,dateofbirth,current_address,genre_id,gender_id,emailaddress,contactnumber,avatar_path) VALUES (:fname,:lname,:dob,:current_address,:genre,:genders,:email,:contact,:avatar_path)";

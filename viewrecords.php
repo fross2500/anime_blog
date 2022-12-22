@@ -23,7 +23,7 @@
                 <td><?php echo $r['subscriber_id'] ?></td>
                 <td><?php echo $r['firstname'] ?></td>
                 <td><?php echo $r['lastname'] ?></td>
-                <td><?php echo $r['name'] ?></td>
+                <td><?php echo $r['anime'] ?></td>
                 <td>
                     <a href="view.php?id=<?php echo $r['subscriber_id'] ?>" class="btn btn-primary">View</a>
                     <a href="edit.php?id=<?php echo $r['subscriber_id'] ?>" class="btn btn-warning">Edit</a>
